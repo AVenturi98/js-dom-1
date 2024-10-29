@@ -1,32 +1,28 @@
-const interrutoreOn = document.getElementById('On')
-
-const interrutoreOff = document.getElementById('Off')
+const interrutore = document.getElementById('On')
 
 
-const lampadinaOff = document.getElementById('lampadina_spenta')
-
-const lampadinaOn = document.getElementById('lampadina_accesa')
-
-
-interrutoreOn.addEventListener('click',  function () {
-
-    lampadinaOff.classList.add('invisible')
-    interrutoreOn.classList.add('invisible')
+interrutore.addEventListener('click',  function () {
+    
+    
+    const lampadinaOff = document.getElementById('lampadina_spenta')
 
 
-    lampadinaOn.classList.remove('invisible')
-    interrutoreOff.classList.remove('invisible')
 
+    if (lampadinaOff.classList.contains('off')) {
+        
+        //lampadinaOff.classList.remove('off')
+        interrutore.innerText = 'Spegni'
+        lampadinaOff.src = 'img/yellow_lamp.png'
+        console.log('accendi')
+
+    } else {
+        
+       // lampadinaOff.classList.add('off')
+        interrutore.innerText = 'Accendi'
+        lampadinaOff.src = 'img/white_lamp.png'
+        console.log('spegni')
+    }
+
+    lampadinaOff.classList.toggle('off')
+    
 })
-
-interrutoreOff.addEventListener('click', function () {
-
-    lampadinaOn.classList.add('invisible')
-    interrutoreOff.classList.add('invisible')
-
-
-    lampadinaOff.classList.remove('invisible')
-    interrutoreOn.classList.remove('invisible')
-})
-
-
